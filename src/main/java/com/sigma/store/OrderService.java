@@ -2,8 +2,13 @@ package com.sigma.store;
 
 public class OrderService {
 
+    private PaymentService paymentService;
+
+    public OrderService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+
     public void placeOrder() {
-       StripePaymentService paymentService =  new StripePaymentService();
        paymentService.processPayment(10);
     }
 }
