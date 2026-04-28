@@ -27,4 +27,19 @@ public class AppConfig {
         }
         return new OrderService(paypal());
     }
+
+    @Bean
+    public NotificationService2 email2() {
+        return new EmailNotificationService2();
+    }
+
+    @Bean
+    public InMemoryUserRepository users() {
+        return new InMemoryUserRepository();
+    }
+
+    @Bean
+    public UserService userService() {
+        return new UserService(users(), email2());
+    }
 }
