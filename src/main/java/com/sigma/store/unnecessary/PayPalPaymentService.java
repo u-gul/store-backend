@@ -1,6 +1,4 @@
-package com.sigma.store;
-
-import org.springframework.stereotype.Service;
+package com.sigma.store.unnecessary;
 
 //@Service("paypal")
 public class PayPalPaymentService implements PaymentService{

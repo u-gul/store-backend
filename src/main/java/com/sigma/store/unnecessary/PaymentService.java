@@ -1,4 +1,4 @@
-package com.sigma.store;
+package com.sigma.store.unnecessary;
 
 public interface PaymentService {
     void processPayment(double amount);

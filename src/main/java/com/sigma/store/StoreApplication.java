@@ -1,5 +1,7 @@
 package com.sigma.store;
 
+import com.sigma.store.unnecessary.User;
+import com.sigma.store.unnecessary.UserService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

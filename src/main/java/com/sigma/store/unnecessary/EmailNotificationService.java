@@ -1,4 +1,4 @@
-package com.sigma.store;
+package com.sigma.store.unnecessary;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
