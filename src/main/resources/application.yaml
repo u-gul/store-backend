@@ -8,4 +8,8 @@ stripe:
   timeout: 1000
   supported-currencies: EUR,USD,INR
 
+email:
+  host: smtp://gmail.com
+  port: 7000
+
 payment-gateway: paypal
