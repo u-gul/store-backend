@@ -9,10 +9,13 @@ import java.time.LocalDate;
 @Table(name = "profiles")
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Profile {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -27,4 +30,10 @@ public class Profile {
 
     @Column(name = "loyalty_points")
     private Integer loyaltyPoints;
+
+    @OneToOne
+    @JoinColumn(name = "id")
+    @MapsId
+    @ToString.Exclude
+    private User user;
 }
