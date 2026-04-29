@@ -48,6 +48,14 @@ public class User {
     @OneToOne(mappedBy = "user")
     private Profile profile;
 
+    @ManyToMany
+    @JoinTable(
+            name = "wishlist",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    public Set<Product> favouriteProducts = new HashSet<>();
+
     public void addAddress(Address address) {
         addresses.add(address);
         address.setUser(this);
