@@ -2,12 +2,19 @@ package com.sigma.store.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tags")
 @Getter
 @Setter
+@NoArgsConstructor
+@ToString
 public class Tag {
 
     @Id
@@ -18,4 +25,11 @@ public class Tag {
     @Column(name = "name")
     private String name;
 
+    @ToString.Exclude
+    @ManyToMany(mappedBy = "tags")
+    private Set<User> users = new HashSet<>();
+
+    public Tag(String name) {
+        this.name = name;
+    }
 }
