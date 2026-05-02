@@ -1,17 +1,17 @@
 package com.sigma.store.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "products")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Product {
 
     @Id
@@ -28,7 +28,7 @@ public class Product {
     @Column(name = "description", columnDefinition = "TEXT", nullable = false)
     private String description;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "category_id")
     private Category category;
 }

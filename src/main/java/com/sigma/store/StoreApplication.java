@@ -1,6 +1,6 @@
 package com.sigma.store;
 
-import com.sigma.store.entities.User;
+import com.sigma.store.services.UserService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -10,6 +10,7 @@ public class StoreApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
-        User user = new User();
+        UserService service = context.getBean(UserService.class);
+        service.manageProducts();
     }
 }

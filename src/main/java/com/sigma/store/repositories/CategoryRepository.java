@@ -1,4 +1,7 @@
 package com.sigma.store.repositories;
 
-public interface CategoryRepository extends org.springframework.data.repository.CrudRepository<com.sigma.store.entities.Category, java.lang.Byte> {
+import com.sigma.store.entities.Category;
+import org.springframework.data.repository.CrudRepository;
+
+public interface CategoryRepository extends CrudRepository<Category, Byte> {
 }

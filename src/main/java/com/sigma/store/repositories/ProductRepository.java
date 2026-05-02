@@ -1,4 +1,7 @@
 package com.sigma.store.repositories;
 
-public interface ProductRepository extends org.springframework.data.repository.CrudRepository<com.sigma.store.entities.Product, java.lang.Long> {
+import com.sigma.store.entities.Product;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ProductRepository extends CrudRepository<Product, Long> {
 }

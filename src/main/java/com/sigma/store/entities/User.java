@@ -32,8 +32,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
     @Builder.Default
+    @ToString.Exclude
     private List<Address> addresses = new ArrayList<>();
 
     @ManyToMany
@@ -43,6 +44,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "tag_id")
     )
     @Builder.Default
+    @ToString.Exclude
     private Set<Tag> tags = new HashSet<>();
 
     @OneToOne(mappedBy = "user")
@@ -54,7 +56,9 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
-    public Set<Product> favouriteProducts = new HashSet<>();
+    @ToString.Exclude
+    @Builder.Default
+    public Set<Product> favoriteProducts = new HashSet<>();
 
     public void addAddress(Address address) {
         addresses.add(address);
@@ -70,5 +74,9 @@ public class User {
         Tag tag = new Tag(tagName);
         tags.add(tag);
         tag.getUsers().add(this);
+    }
+
+    public void addFavoriteProduct(Product product) {
+        favoriteProducts.add(product);
     }
 }
