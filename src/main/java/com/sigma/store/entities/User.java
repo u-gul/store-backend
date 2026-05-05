@@ -47,8 +47,8 @@ public class User {
     @ToString.Exclude
     private Set<Tag> tags = new HashSet<>();
 
-    @OneToOne(mappedBy = "user")
-    private Profile profile;
+//    @OneToOne(mappedBy = "user")
+//    private Profile profile;
 
     @ManyToMany
     @JoinTable(
