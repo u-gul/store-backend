@@ -19,6 +19,10 @@ public class Category {
         this.name = name;
     }
 
+    public Category(int id) {
+        this.id = (byte) id;
+    }
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
